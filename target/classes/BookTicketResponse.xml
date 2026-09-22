@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+               xmlns:rt="http://railway.example.com/ticketing">
+    <soap:Body>
+        <rt:BookTicketResponse>
+            <rt:Status>CONFIRMED</rt:Status>
+            <rt:PNR>4512789632</rt:PNR>
+            <rt:TransactionId>TXN987654321</rt:TransactionId>
+            <rt:TotalAmount>2500.00</rt:TotalAmount>
+        </rt:BookTicketResponse>
+    </soap:Body>
+</soap:Envelope>

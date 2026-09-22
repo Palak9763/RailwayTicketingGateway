@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://railway.example.com/ticketing"
+           xmlns:rt="http://railway.example.com/ticketing"
+           elementFormDefault="qualified">
+
+    <xs:element name="BookTicketRequest" type="rt:BookTicketRequestType"/>
+
+    <xs:complexType name="BookTicketRequestType">
+        <xs:sequence>
+            <xs:element name="Journey" type="rt:JourneyType"/>
+            <xs:element name="PassengerList" type="rt:PassengerListType"/>
+            <xs:element name="Payment" type="rt:PaymentType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="JourneyType">
+        <xs:sequence>
+            <xs:element name="FromStation" type="rt:StationCodeType"/>
+            <xs:element name="ToStation" type="rt:StationCodeType"/>
+            <xs:element name="JourneyDate" type="xs:date"/>
+            <xs:element name="TrainNumber" type="xs:string"/>
+            <xs:element name="Class" type="rt:TravelClassType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="StationCodeType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2,5}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TravelClassType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1A"/>
+            <xs:enumeration value="2A"/>
+            <xs:enumeration value="3A"/>
+            <xs:enumeration value="SL"/>
+            <xs:enumeration value="CC"/>
+            <xs:enumeration value="2S"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="PassengerListType">
+        <xs:sequence>
+            <xs:element name="Passenger" type="rt:PassengerType" minOccurs="1" maxOccurs="6"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="PassengerType">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="Age" type="xs:positiveInteger"/>
+            <xs:element name="Gender" type="rt:GenderType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="GenderType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="M"/>
+            <xs:enumeration value="F"/>
+            <xs:enumeration value="O"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="PaymentType">
+        <xs:sequence>
+            <xs:element name="Amount" type="xs:decimal"/>
+            <xs:element name="Currency" type="xs:string" fixed="INR"/>
+            <xs:element name="PaymentReference" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+               xmlns:rt="http://railway.example.com/ticketing">
+    <soap:Header>
+        <rt:AuthHeader>
+            <rt:AgentId>AGENT12345</rt:AgentId>
+            <rt:AuthToken>ABC123XYZ789</rt:AuthToken>
+            <rt:Timestamp>2026-09-17T05:00:00Z</rt:Timestamp>
+        </rt:AuthHeader>
+        <rt:RoutingHeader>
+            <rt:RequestId>REQ-20260917-00001</rt:RequestId>
+            <rt:Service>BookTicket</rt:Service>
+            <rt:Version>1.0</rt:Version>
+        </rt:RoutingHeader>
+    </soap:Header>
+    <soap:Body>
+        <rt:BookTicketRequest>
+            <rt:Journey>
+                <rt:FromStation>NDLS</rt:FromStation>
+                <rt:ToStation>MMCT</rt:ToStation>
+                <rt:JourneyDate>2026-10-15</rt:JourneyDate>
+                <rt:TrainNumber>12952</rt:TrainNumber>
+                <rt:Class>3A</rt:Class>
+            </rt:Journey>
+            <rt:PassengerList>
+                <rt:Passenger>
+                    <rt:Name>Rahul Sharma</rt:Name>
+                    <rt:Age>28</rt:Age>
+                    <rt:Gender>M</rt:Gender>
+                </rt:Passenger>
+                <rt:Passenger>
+                    <rt:Name>Priya Sharma</rt:Name>
+                    <rt:Age>25</rt:Age>
+                    <rt:Gender>F</rt:Gender>
+                </rt:Passenger>
+            </rt:PassengerList>
+            <rt:Payment>
+                <rt:Amount>2500.00</rt:Amount>
+                <rt:Currency>INR</rt:Currency>
+                <rt:PaymentReference>PAY-987654</rt:PaymentReference>
+            </rt:Payment>
+        </rt:BookTicketRequest>
+    </soap:Body>
+</soap:Envelope>
