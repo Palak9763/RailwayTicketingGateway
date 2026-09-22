@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SOAP Railway Ticketing Gateway - Mini Project
 
 ## What this project demonstrates
@@ -45,3 +46,7 @@ Then run again. XSD validation should fail.
 
 ## Important academic note
 The XSD in this prototype validates the `BookTicketRequest` payload. A real SOAP stack/WSDL handles the SOAP envelope and operation contract. This project is a classroom prototype and does not connect to IRCTC or perform real ticket booking/payment.
+=======
+# RailwayTicketingGateway
+SOAP-based Railway Ticketing Gateway mini-project using Java, XML, XSD, DOM, and SAX parsing. Demonstrates ticket booking request validation, authentication, simulated booking response, and XML response parsing.
+>>>>>>> 245e2cdb1940680a9207360ed9d1dee0fc25a4bf
