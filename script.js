@@ -5,6 +5,7 @@ const txnText = document.getElementById('txnText');
 const trainText = document.getElementById('trainText');
 const routeText = document.getElementById('routeText');
 const classText = document.getElementById('classText');
+const statusMessage = document.getElementById('statusMessage');
 const submitButton = bookingForm.querySelector('button[type="submit"]');
 
 const todayPlus = () => {
@@ -59,6 +60,7 @@ bookingForm.addEventListener('submit', async function (event) {
   };
 
   try {
+    statusMessage.textContent = 'Request Processed Successfully';
     const result = await simulateBooking();
     updateConfirmation({
       ...result,

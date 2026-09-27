@@ -120,20 +120,39 @@ button:hover {
   transform: translateY(-1px);
 }
 
+.prominent-card {
+  background: linear-gradient(180deg, #f5fff9 0%, #ffffff 100%);
+  border: 2px solid rgba(30, 155, 103, 0.35);
+  box-shadow: 0 24px 48px rgba(24, 108, 73, 0.18);
+}
+
+.status-message {
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  background: rgba(30, 155, 103, 0.12);
+  border: 1px solid rgba(30, 155, 103, 0.25);
+  color: var(--success);
+  border-radius: 10px;
+  font-weight: 700;
+  text-align: center;
+}
+
 .confirmation-box {
-  border: 1px solid #bbebd0;
-  background: var(--success-bg);
-  border-radius: 14px;
+  border: 2px solid rgba(30, 155, 103, 0.4);
+  background: linear-gradient(180deg, #ebfff4 0%, #f5fff9 100%);
+  border-radius: 16px;
   padding: 18px 16px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
 }
 
 .title {
   margin: 0 0 18px;
   color: var(--success);
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 .row {
