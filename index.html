@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Railway Ticketing Gateway</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div>
+          <p class="eyebrow">Prototype Demo</p>
+          <h1>Railway Ticketing Gateway</h1>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="card form-card">
+          <h2>Book Ticket</h2>
+
+          <form id="bookingForm">
+            <div class="grid two-col">
+              <label>
+                Train Number
+                <input type="text" id="trainNumber" value="12952" required />
+              </label>
+              <label>
+                Class
+                <select id="travelClass">
+                  <option value="3A" selected>3A</option>
+                  <option value="2A">2A</option>
+                  <option value="1A">1A</option>
+                  <option value="SL">SL</option>
+                  <option value="CC">CC</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="grid two-col">
+              <label>
+                From Station
+                <input type="text" id="fromStation" value="NDLS" required />
+              </label>
+              <label>
+                To Station
+                <input type="text" id="toStation" value="MMCT" required />
+              </label>
+            </div>
+
+            <div class="grid two-col">
+              <label>
+                Journey Date
+                <input type="date" id="journeyDate" required />
+              </label>
+              <label>
+                Payment Amount
+                <input type="number" id="amount" value="2500" required />
+              </label>
+            </div>
+
+            <div class="grid two-col">
+              <label>
+                Passenger Name
+                <input type="text" id="passengerName" value="Rahul Sharma" required />
+              </label>
+              <label>
+                Age
+                <input type="number" id="age" value="28" min="1" required />
+              </label>
+            </div>
+
+            <div class="grid one-col">
+              <label>
+                Gender
+                <select id="gender">
+                  <option value="M" selected>M</option>
+                  <option value="F">F</option>
+                  <option value="O">O</option>
+                </select>
+              </label>
+            </div>
+
+            <button type="submit">Book Ticket</button>
+          </form>
+        </section>
+
+        <section class="card result-card">
+          <h2>Booking Confirmed</h2>
+
+          <div class="confirmation-box" id="confirmationBox">
+            <p class="title">BOOKING CONFIRMED</p>
+
+            <div class="row"><span>Status</span><strong id="statusText">CONFIRMED</strong></div>
+            <div class="row"><span>PNR</span><strong id="pnrText">4512789632</strong></div>
+            <div class="row"><span>Transaction ID</span><strong id="txnText">TXN987654321</strong></div>
+            <div class="row"><span>Train</span><strong id="trainText">12952</strong></div>
+            <div class="row"><span>Route</span><strong id="routeText">NDLS → MMCT</strong></div>
+            <div class="row"><span>Class</span><strong id="classText">3A</strong></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
