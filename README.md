@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # SOAP Railway Ticketing Gateway - Mini Project
 
 ## What this project demonstrates
