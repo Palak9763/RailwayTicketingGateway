@@ -30,6 +30,7 @@ public class SoapGateway {
             System.out.println("XSD Validation: PASSED");
 
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            factory.setNamespaceAware(true);
             factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
             factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
             factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
@@ -40,14 +41,14 @@ public class SoapGateway {
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document document = builder.parse(new File(xmlFile));
 
-            String agentId = text(document, "rt:AgentId");
-            String token = text(document, "rt:AuthToken");
-            String from = text(document, "rt:FromStation");
-            String to = text(document, "rt:ToStation");
-            String date = text(document, "rt:JourneyDate");
-            String train = text(document, "rt:TrainNumber");
-            String travelClass = text(document, "rt:Class");
-            String amount = text(document, "rt:Amount");
+            String agentId = text(document, "AgentId", "http://railway.example.com/ticketing");
+            String token = text(document, "AuthToken", "http://railway.example.com/ticketing");
+            String from = text(document, "FromStation", "http://railway.example.com/ticketing");
+            String to = text(document, "ToStation", "http://railway.example.com/ticketing");
+            String date = text(document, "JourneyDate", "http://railway.example.com/ticketing");
+            String train = text(document, "TrainNumber", "http://railway.example.com/ticketing");
+            String travelClass = text(document, "Class", "http://railway.example.com/ticketing");
+            String amount = text(document, "Amount", "http://railway.example.com/ticketing");
 
             System.out.println("\n[2] Authentication & Routing");
             System.out.println("Agent ID      : " + agentId);
@@ -76,8 +77,8 @@ public class SoapGateway {
         }
     }
 
-    private static String text(Document document, String tag) {
-        NodeList nodes = document.getElementsByTagName(tag);
+    private static String text(Document document, String tag, String namespaceUri) {
+        NodeList nodes = document.getElementsByTagNameNS(namespaceUri, tag);
         return nodes.getLength() == 0 ? "" : nodes.item(0).getTextContent().trim();
     }
 
