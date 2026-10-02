@@ -1,6 +1,5 @@
 
 # SOAP Railway Ticketing Gateway - Mini Project
-
 ## What this project demonstrates
 - SOAP-style BookTicket XML envelope
 - Authentication and routing headers
